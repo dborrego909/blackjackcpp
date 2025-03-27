@@ -21,6 +21,13 @@ void Cards::set_face_values() {
   }
 }
 
+bool Cards::is_ace() {
+  return rank == "Ace";
+}
+
+ 
+
+/*
 //This is going to create the deck. From what i understand arrays get passed in by refrences so it should change it on its own. 
 void Cards::create_deck(Cards array_deck[52]) {
   string SUITS[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
@@ -40,3 +47,4 @@ void Cards::create_deck(Cards array_deck[52]) {
     array_deck[i].set_face_values();
   }
 }
+*/

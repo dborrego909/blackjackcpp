@@ -3,21 +3,18 @@
 // #include "./include/Player.h"
 #include <algorithm>
 #include "./include/Cards.h"
+#include "include/Deck.h"
 
 #include <iostream>
 #include <string>
+#include <vector>
 // #include <random>
 using namespace std;
 
 
 int main() {
 
-  Cards deck[52];
-  Cards::create_deck(deck);
-
-  for (int i = 0; i < 52; i++) {
-    deck[i].display_card();
-  }
+  Deck deck;
 
   return 0;
 }

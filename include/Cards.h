@@ -9,7 +9,8 @@ public:
   Cards(string s, string r, int v);
   void display_card() const;
   void set_face_values();
-  static void create_deck(Cards array_deck[52]);
+  bool is_ace();
+  // static void create_deck(Cards array_deck[52]);  //This is going to be moved to the deck class.
 
 private:
   int value;
