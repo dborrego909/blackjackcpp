@@ -12,7 +12,7 @@ Cards::Cards(string s, string r, int v) {
 
 void Cards::display_card() const {
   string formatted_text = rank + " of " + suit;
-  cout << setw(20) << left << formatted_text << " : The value of this card is " << value << endl;
+  cout << setw(20) << left << formatted_text << " : Value " << value << endl;
 }
 
 void Cards::set_face_values() {
