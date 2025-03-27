@@ -1,4 +1,5 @@
 #include "./include/Cards.h"
+#include <iomanip>
 
 Cards::Cards() {
 }
@@ -10,7 +11,8 @@ Cards::Cards(string s, string r, int v) {
 }
 
 void Cards::display_card() const {
-  cout << rank << " of " << suit << " : The value of this card is " << value << endl;
+  string formatted_text = rank + " of " + suit;
+  cout << setw(20) << left << formatted_text << " : The value of this card is " << value << endl;
 }
 
 void Cards::set_face_values() {
@@ -33,5 +35,8 @@ void Cards::create_deck(Cards array_deck[52]) {
       array_deck[k] = card;
       k++;
     }
+  }
+  for (int i = 0; i < 52; i++) {
+    array_deck[i].set_face_values();
   }
 }
