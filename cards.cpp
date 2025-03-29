@@ -25,7 +25,11 @@ bool Cards::is_ace() {
   return rank == "Ace";
 }
 
- 
+ostream& operator<<(ostream &COUT, Cards &playing_card)  {
+   COUT << playing_card.rank << " of " << playing_card.suit << endl;
+  return COUT;
+}
+
 
 /*
 //This is going to create the deck. From what i understand arrays get passed in by refrences so it should change it on its own. 

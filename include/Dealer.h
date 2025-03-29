@@ -1,12 +1,17 @@
-#ifndef DECK_H
-#define DECK_H
-using namespace std;
-#include <iostream>
+#ifndef DEALER_H
+#define DEALER_H
+#include "Cards.h"
+#include "Deck.h"
+#include <vector>
 
-class Deck {
-  public:
-    int cards;
+class Dealer {
+public:
+  Dealer();
+  void deal_players(vector<Cards> player_hand);
 
-  private:
+private:
+  Deck deck;
+
 };
-#endif 
+
+#endif
