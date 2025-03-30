@@ -10,10 +10,11 @@ Cards::Cards(string s, string r, int v) {
   value = v;
 }
 
-void Cards::display_card() const {
-  string formatted_text = rank + " of " + suit;
-  cout << setw(20) << left << formatted_text << " : Value " << value << endl;
-}
+// This is not longer necessary because of operator overload method.   
+// void Cards::display_card() const {
+//   string formatted_text = rank + " of " + suit;
+//   cout << setw(20) << left << formatted_text << " : Value " << value << endl;
+// }
 
 void Cards::set_face_values() {
   if ((rank == "Jack") || (rank == "Queen") || (rank == "King")) {

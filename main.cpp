@@ -16,6 +16,9 @@ using namespace std;
 int main() {
 
   Deck deck;
+  deck.shuffle_deck();
+
+
 
 
   return 0;

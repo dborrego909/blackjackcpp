@@ -1,6 +1,9 @@
 #include "./include/Deck.h"
 #include "./include/Cards.h"
 #include <vector>
+#include <random>
+#include <algorithm>
+
 
 Deck::Deck () {
 
@@ -33,3 +36,8 @@ void Deck::deal(vector<Cards> &player_hand) {
   deck.pop_back();
 }
 
+void Deck::shuffle_deck() {
+  random_device rd;
+  mt19937 g(rd());
+  shuffle(deck.begin(), deck.end(), g);
+}

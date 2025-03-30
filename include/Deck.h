@@ -11,6 +11,7 @@ class Deck {
   Cards& operator[](int index);
   const Cards& operator[](int index) const; 
   void deal(vector<Cards> &player_hand);
+  void shuffle_deck();
 
   private:
   vector<Cards> deck;
