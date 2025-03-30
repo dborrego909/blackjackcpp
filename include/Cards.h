@@ -11,7 +11,6 @@ public:
   void set_face_values();
   bool is_ace();
   friend ostream& operator<<(ostream &COUT, Cards &playing_card);
-  // static void create_deck(Cards array_deck[52]);  //This is going to be moved to the deck class.
 
 private:
   int value;

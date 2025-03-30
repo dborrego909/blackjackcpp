@@ -5,15 +5,13 @@
 #include "include/Player.h"
 
 
-Players::Players() {
+Player::Player() {
 }
 
-void Players::hit(vector<Cards> deck) {
-  Cards top_card = deck.back();
-  player_hand.push_back(top_card);
-  deck.pop_back();
+void Player::hit(Cards dealt_card) {
+  player_hand.push_back(dealt_card);
 }
 
-bool Players::is_bust() {
+bool Player::is_bust() {
 
 }

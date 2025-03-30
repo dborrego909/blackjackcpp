@@ -3,13 +3,14 @@
 #include "Dealer.h"
 #include "Cards.h"
 #include "Deck.h"
-
 #include <vector>
-class Players {
+
+class Player {
 public:
-  Players();
+  Player();
   void hit(vector<Cards> deck);
   bool is_bust();
+  void hit(Cards dealt_card);
 
 private:
   vector<Cards> player_hand;
