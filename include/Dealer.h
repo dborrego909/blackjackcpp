@@ -1,7 +1,7 @@
 #ifndef DEALER_H
 #define DEALER_H
 #include "Cards.h"
-#include "Deck.h"
+#include "Player.h"
 #include <vector>
 #include <random>
 #include <algorithm>
@@ -10,7 +10,7 @@
 class Dealer {
 public:
   Dealer();
-  void deal_players(vector<Cards> player_hand);
+  void deal_players(vector<Player*>& all_players);
   Cards player_hit(); // Returns top card of dealer deck and pops top card
   void dealer_shuffle(); // Shuffles the deck
   Cards& operator[](int index);

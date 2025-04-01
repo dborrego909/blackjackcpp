@@ -1,8 +1,9 @@
-#include "include/Deck.h"
+// #include "include/Deck.h"
 #include "include/Cards.h"
 #include <random>
 #include <vector>
 #include "include/Dealer.h"
+#include "include/Player.h"
 
 Dealer::Dealer() {
   string SUITS[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
@@ -25,20 +26,28 @@ Cards Dealer::player_hit() {
   return top_card;
 }
 
-void Dealer::deal_players(vector<Cards> player_hand) {
-  
+
+// void open_deal(Player player) {
+//   player
+// }
+
+void Dealer::deal_players(vector<Player*>& all_players) { // Deals two cards to all players and the dealer. 
+  for (Player* player : all_players) {
+    player->hit(this->player_hit());
+    player->hit(this->player_hit());
+  }
 }
 
 void Dealer::dealer_shuffle() {
-  random_device rd;
-  mt19937 g(rd());
-  shuffle(deck.begin(), deck.end(), g);
+  random_device rd; //This generates a simple seed for randomizer called rd
+  mt19937 g(rd()); // This creates a more random seed called g from rd
+  shuffle(deck.begin(), deck.end(), g); // This actually shuffles using the seed for randomness
 }
 
-Cards& Deck::operator[](int index) {
+Cards& Dealer::operator[](int index) {
   return deck[index];
 }
 
-const Cards& Deck::operator[](int index) const {
+const Cards& Dealer::operator[](int index) const {
   return deck[index];
-}
+} 

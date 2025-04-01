@@ -1,26 +1,28 @@
 #include <iostream>
 #include "./include/Cards.h"
 #include "./include/Dealer.h"
-#include "include/Deck.h"
+// #include "include/Deck.h"
 #include "include/Player.h"
 using namespace std;
 
-void display_deck_test(vector<Cards> deal_deck) {
-  for (int i = 0; i < 52; i++) {
-    cout << deal_deck[i];
-  }
-}
+
 
 int main() {
 
   Dealer dealer;
+  Player player1, player2, player3;
 
-  dealer.dealer_shuffle();
+  vector<Player*> all_players = {&player1, &player2, &player3};
 
-  Cards card1 = dealer.player_hit();
-  Cards card2 = dealer.player_hit();
+  dealer.deal_players(all_players);
 
-  cout << card1 << card2;
+  int count = 1;
+  for (Player* player : all_players) {
+    cout << "This is the hand of player : " << count << endl;
+    player->show_hand();
+    count += 1;
+    cout << endl;
+  }
 
   return 0;
 }
